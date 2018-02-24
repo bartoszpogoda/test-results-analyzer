@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="borderPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bpogoda.learning.testanalyzer.app.view.MainController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem fx:id="loadTemplate" mnemonicParsing="false" onAction="#handleLoadTemplate" text="Load template" />
+                  <MenuItem fx:id="loadAnswers" disable="true" mnemonicParsing="false" onAction="#handleLoadAnswers" text="Load answers" />
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="About">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <right>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="21.0" text="Template file">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutY="52.0" prefHeight="35.0" prefWidth="200.0" styleClass="bg-accent">
+               <children>
+                  <Text fx:id="templateFileTxt" layoutX="14.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Not selected" wrappingWidth="194.6708984375" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="-3.6708984375" AnchorPane.topAnchor="7.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="148.0" prefHeight="35.0" prefWidth="200.0" styleClass="bg-accent">
+               <children>
+                  <Text fx:id="answersFileTxt" layoutX="15.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Not selected" wrappingWidth="193.6708984375" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="7.0" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="14.0" layoutY="117.0" text="Answers file">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </right>
+   <center>
+      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Welcome">
+            <content>
+              <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="46.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome screen...">
+                           <font>
+                              <Font size="44.0" />
+                           </font>
+                        </Text>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

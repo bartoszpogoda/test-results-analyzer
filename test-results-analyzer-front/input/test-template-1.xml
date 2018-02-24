@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questions>
+  <question>
+    <title>What's your favorite color?</title>
+    <answers>
+      <correct>a</correct>
+      <answer>
+        <key>a</key>
+        <value>Red</value>
+      </answer>
+      <answer>
+        <key>b</key>
+        <value>Blue</value>
+      </answer>
+    </answers>
+  </question>
+
+  <question>
+    <title>What's your favorite meal?</title>
+    <answers>
+      <correct>a</correct>
+      <answer>
+        <key>a</key>
+        <value>Banana</value>
+      </answer>
+      <answer>
+        <key>b</key>
+        <value>Pizza</value>
+      </answer>
+      <answer>
+        <key>c</key>
+        <value>Pasta</value>
+      </answer>
+    </answers>
+  </question>
+</questions>
