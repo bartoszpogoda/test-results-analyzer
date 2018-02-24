@@ -1,5 +1,6 @@
 package bpogoda.learning.testanalyzer.api.model.answered;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -11,6 +12,10 @@ import java.util.List;
  */
 public class AnsweredTest {
 	private List<Character> answers;
+
+	public AnsweredTest() {
+		this.answers = new LinkedList<>();
+	}
 
 	public List<Character> getAnswers() {
 		return answers;
