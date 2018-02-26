@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bpogoda.learning.testanalyzer.app.view.grades.GradeBalanceController">
+   <children>
+      <Text layoutX="14.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grade balance">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Pane layoutY="68.0" prefHeight="124.0" prefWidth="600.0" styleClass="bg-accent" stylesheets="@../../application.css">
+         <children>
+            <Text layoutX="464.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Configuration">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="243.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3.0" />
+            <TextField fx:id="range3" layoutX="270.0" layoutY="43.0" prefHeight="31.0" prefWidth="60.0" />
+            <Text layoutX="243.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3.5" />
+            <TextField fx:id="range3_5" layoutX="270.0" layoutY="80.0" prefHeight="31.0" prefWidth="60.0" />
+            <Text layoutX="357.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.0" />
+            <TextField fx:id="range4" layoutX="385.0" layoutY="43.0" prefHeight="31.0" prefWidth="60.0" />
+            <Text layoutX="357.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4.5" />
+            <TextField fx:id="range4_5" layoutX="385.0" layoutY="80.0" prefHeight="31.0" prefWidth="60.0" />
+            <Text layoutX="473.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5.0" />
+            <TextField fx:id="range5" layoutX="501.0" layoutY="43.0" prefHeight="31.0" prefWidth="60.0" />
+            <Text layoutX="473.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5.5" />
+            <TextField fx:id="range5_5" layoutX="501.0" layoutY="80.0" prefHeight="31.0" prefWidth="60.0" />
+            <Text layoutX="14.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max number of points:" />
+            <Text layoutX="17.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of questions:" />
+            <Text fx:id="numberOfQuestionsTxt" layoutX="202.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Text fx:id="maxNumberOfPointsTxt" layoutX="202.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <Button fx:id="applyConfigurationBtn" layoutX="28.0" layoutY="80.0" mnemonicParsing="false" onAction="#applyConfiguration" text="Apply configuration" />
+         </children>
+      </Pane>
+      <BarChart fx:id="gradeBalanceBarChart" layoutX="4.0" layoutY="194.0" prefHeight="202.0" prefWidth="593.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>

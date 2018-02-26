@@ -21,7 +21,7 @@ public class HistogramController implements TestDataHandlingController {
 
 		HistogramResultsAnalyzer histogramResultsAnalyzer = new HistogramResultsAnalyzer();
 		
-		int[] histogramData = histogramResultsAnalyzer.analyze(testTemplate, answeredTests);
+		int[] histogramData = histogramResultsAnalyzer.generateHistogramData(testTemplate, answeredTests);
 		
         Axis<String> xAxis = histogramBarChart.getXAxis();
         Axis<Number> yAxis = histogramBarChart.getYAxis();
