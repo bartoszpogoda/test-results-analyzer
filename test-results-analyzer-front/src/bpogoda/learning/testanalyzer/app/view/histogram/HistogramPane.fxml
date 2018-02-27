@@ -7,9 +7,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bpogoda.learning.testanalyzer.app.view.histogram.HistogramController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bpogoda.learning.testanalyzer.app.view.histogram.HistogramController">
    <children>
-      <BarChart fx:id="histogramBarChart" barGap="0.0" categoryGap="0.0" layoutX="12.0" layoutY="29.0" legendVisible="false" prefHeight="320.0" prefWidth="576.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
+      <BarChart fx:id="histogramBarChart" barGap="0.0" categoryGap="0.0" layoutX="12.0" layoutY="29.0" legendVisible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="471.0" prefWidth="576.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="67.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -17,7 +17,7 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
-      <Text layoutX="12.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result's histogram">
+      <Text layoutX="12.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result's histogram" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="24.0224609375">
          <font>
             <Font size="25.0" />
          </font>

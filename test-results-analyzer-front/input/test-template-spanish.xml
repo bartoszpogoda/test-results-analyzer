@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questions>
+
+  <question>
+    <title>Dzień dobry</title>
+    <answers>
+      <correct>b</correct>
+      <answer>
+        <key>a</key>
+        <value>Buenas noches</value>
+      </answer>
+      <answer>
+        <key>b</key>
+        <value>Buenos dias</value>
+      </answer>
+      <answer>
+        <key>c</key>
+        <value>Hasta luego</value>
+      </answer>
+    </answers>
+  </question>
+
+  <question>
+    <title>Kurczak</title>
+    <answers>
+      <correct>a</correct>
+      <answer>
+        <key>a</key>
+        <value>el pollo</value>
+      </answer>
+      <answer>
+        <key>b</key>
+        <value>la carne</value>
+      </answer>
+      <answer>
+        <key>c</key>
+        <value>el gato</value>
+      </answer>
+    </answers>
+  </question>
+
+  <question>
+    <title>Makaron</title>
+    <answers>
+      <correct>a</correct>
+      <answer>
+        <key>a</key>
+        <value>la pasta</value>
+      </answer>
+      <answer>
+        <key>b</key>
+        <value>la verdura</value>
+      </answer>
+      <answer>
+        <key>c</key>
+        <value>el telefono</value>
+      </answer>
+    </answers>
+  </question>
+
+  <question>
+    <title>Ja</title>
+    <answers>
+      <correct>b</correct>
+      <answer>
+        <key>a</key>
+        <value>Tu</value>
+      </answer>
+      <answer>
+        <key>b</key>
+        <value>Yo</value>
+      </answer>
+      <answer>
+        <key>c</key>
+        <value>El</value>
+      </answer>
+    </answers>
+  </question>
+
+  <question>
+    <title>Proszę</title>
+    <answers>
+      <correct>c</correct>
+      <answer>
+        <key>a</key>
+        <value>Adios</value>
+      </answer>
+      <answer>
+        <key>b</key>
+        <value>Hasta la vista</value>
+      </answer>
+      <answer>
+        <key>c</key>
+        <value>Por favor</value>
+      </answer>
+    </answers>
+  </question>
+
+  <question>
+    <title>Dziękuję</title>
+    <answers>
+      <correct>a</correct>
+      <answer>
+        <key>a</key>
+        <value>Gracias</value>
+      </answer>
+      <answer>
+        <key>b</key>
+        <value>Aqui tienes</value>
+      </answer>
+      <answer>
+        <key>c</key>
+        <value>Hola</value>
+      </answer>
+    </answers>
+  </question>
+
+  <question>
+    <title>Teraz</title>
+    <answers>
+      <correct>c</correct>
+      <answer>
+        <key>a</key>
+        <value>Aqui</value>
+      </answer>
+      <answer>
+        <key>b</key>
+        <value>Tienes</value>
+      </answer>
+      <answer>
+        <key>c</key>
+        <value>Ahora</value>
+      </answer>
+    </answers>
+  </question>
+
+  <question>
+    <title>Jak leci?</title>
+    <answers>
+      <correct>a</correct>
+      <answer>
+        <key>a</key>
+        <value>Que tal?</value>
+      </answer>
+      <answer>
+        <key>b</key>
+        <value>Algo mas?</value>
+      </answer>
+      <answer>
+        <key>c</key>
+        <value>Quanto es?</value>
+      </answer>
+    </answers>
+  </question>
+
+  <question>
+    <title>Dokąd?</title>
+    <answers>
+      <correct>b</correct>
+      <answer>
+        <key>a</key>
+        <value>Vamos?</value>
+      </answer>
+      <answer>
+        <key>b</key>
+        <value>A donde?</value>
+      </answer>
+      <answer>
+        <key>c</key>
+        <value>Donde</value>
+      </answer>
+    </answers>
+  </question>
+
+  <question>
+    <title>Osiem</title>
+    <answers>
+      <correct>c</correct>
+      <answer>
+        <key>a</key>
+        <value>siete</value>
+      </answer>
+      <answer>
+        <key>b</key>
+        <value>Nueve</value>
+      </answer>
+      <answer>
+        <key>c</key>
+        <value>Ocho</value>
+      </answer>
+    </answers>
+  </question>
+
+
+</questions>

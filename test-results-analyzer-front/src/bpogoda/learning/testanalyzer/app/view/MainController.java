@@ -10,7 +10,6 @@ import bpogoda.learning.testanalyzer.api.model.template.TestTemplate;
 import bpogoda.learning.testanalyzer.app.MainApp;
 import bpogoda.learning.testanalyzer.app.util.TestAnswersCsvFileReader;
 import bpogoda.learning.testanalyzer.app.util.TestTemplateXmlFileReader;
-import bpogoda.learning.testanalyzer.app.view.histogram.HistogramController;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -46,13 +45,32 @@ public class MainController {
 
 	private List<TestDataHandlingController> testDataHandlingControllers;
 
+	private Stage primaryStage;
+
 	@FXML
 	public void initialize() throws IOException {
 		testDataHandlingControllers = new ArrayList<>();
 		
+		initGeneralStatisticsPane();
 		initHistogramPane();
 		initGradeBalancePane();
+		initCorrectAnswerDistributionPane();
 		disableTabPanes();
+	}
+	
+	@FXML
+	private void quit() {
+		this.primaryStage.close();
+	}
+	
+	@FXML
+	private void showAbout() {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("About");
+		alert.setHeaderText("Test results analyzer");
+		alert.setContentText("Created by bpogoda for Advanced programming in Java course @PWR.");
+
+		alert.showAndWait();
 	}
 
 	/**
@@ -132,10 +150,23 @@ public class MainController {
 		loadAnswers.setDisable(true);
 
 		testDataHandlingControllers.forEach((controller) -> controller.clear());
+		
+		tabPane.getSelectionModel().select(0);
+		disableTabPanes();
 	}
 
 	private void processTestResults() {
 		testDataHandlingControllers.forEach((controller) -> controller.processTestData(testTemplate, answeredTests));
+	}
+
+	private void initGeneralStatisticsPane() throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+
+		loader.setLocation(MainApp.class.getResource("view/general/GeneralStatisticsPane.fxml"));
+		AnchorPane generalStatisticsPane = (AnchorPane) loader.load();
+		testDataHandlingControllers.add(loader.getController());
+
+		addDynamicPane("General stats", generalStatisticsPane);
 	}
 
 	public void initHistogramPane() throws IOException {
@@ -157,6 +188,16 @@ public class MainController {
 
 		addDynamicPane("Grade balance", gradeBalancePane);
 	}
+	
+	public void initCorrectAnswerDistributionPane() throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+
+		loader.setLocation(MainApp.class.getResource("view/answers/CorrectAnswerDistributionPane.fxml"));
+		AnchorPane correctAnswerDistributionPane = (AnchorPane) loader.load();
+		testDataHandlingControllers.add(loader.getController());
+
+		addDynamicPane("Correct answer distribution", correctAnswerDistributionPane);
+	}
 
 	public void addDynamicPane(String title, Pane pane) {
 		tabPane.getTabs().add(new Tab(title, pane));
@@ -174,6 +215,10 @@ public class MainController {
 		for(int i = 1; i < tabs.size() ; i++) {
 			tabs.get(i).setDisable(false);
 		}
+	}
+
+	public void setStage(Stage primaryStage) {
+		this.primaryStage = primaryStage;
 	}
 
 }

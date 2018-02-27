@@ -7,10 +7,9 @@ import java.util.Map;
 
 import bpogoda.learning.testanalyzer.api.model.answered.AnsweredTest;
 import bpogoda.learning.testanalyzer.api.model.template.TestTemplate;
-import bpogoda.learning.testanalyzer.api.stats.Grade;
-import bpogoda.learning.testanalyzer.api.stats.GradeBalanceResultsAnalyzer;
-import bpogoda.learning.testanalyzer.api.stats.GradeRanges;
-import bpogoda.learning.testanalyzer.api.stats.HistogramResultsAnalyzer;
+import bpogoda.learning.testanalyzer.api.stats.grades.Grade;
+import bpogoda.learning.testanalyzer.api.stats.grades.GradeBalanceResultsAnalyzer;
+import bpogoda.learning.testanalyzer.api.stats.grades.GradeRanges;
 import bpogoda.learning.testanalyzer.app.view.TestDataHandlingController;
 import javafx.fxml.FXML;
 import javafx.scene.chart.Axis;
@@ -138,7 +137,6 @@ public class GradeBalanceController implements TestDataHandlingController {
 		Axis<Number> yAxis = gradeBalanceBarChart.getYAxis();
 
 		XYChart.Series<String, Number> series1 = new XYChart.Series<>();
-		series1.setName("Grade balance");
 
 		for (Grade grade : calculatedGradeScores.keySet()) {
 			series1.getData().add(new XYChart.Data<>(grade.toString(), calculatedGradeScores.get(grade)));
@@ -146,6 +144,7 @@ public class GradeBalanceController implements TestDataHandlingController {
 
 		gradeBalanceBarChart.getData().clear();
 		gradeBalanceBarChart.getData().add(series1);
+		
 		gradeBalanceBarChart.setCategoryGap(0);
 		gradeBalanceBarChart.setBarGap(0);
 		gradeBalanceBarChart.autosize();
@@ -156,8 +155,7 @@ public class GradeBalanceController implements TestDataHandlingController {
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
-
+		gradeBalanceBarChart.getData().clear();
 	}
 
 }

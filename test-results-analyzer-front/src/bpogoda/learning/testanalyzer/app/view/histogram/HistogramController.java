@@ -4,7 +4,7 @@ import java.util.List;
 
 import bpogoda.learning.testanalyzer.api.model.answered.AnsweredTest;
 import bpogoda.learning.testanalyzer.api.model.template.TestTemplate;
-import bpogoda.learning.testanalyzer.api.stats.HistogramResultsAnalyzer;
+import bpogoda.learning.testanalyzer.api.stats.histogram.HistogramResultsAnalyzer;
 import bpogoda.learning.testanalyzer.app.view.TestDataHandlingController;
 import javafx.fxml.FXML;
 import javafx.scene.chart.Axis;
