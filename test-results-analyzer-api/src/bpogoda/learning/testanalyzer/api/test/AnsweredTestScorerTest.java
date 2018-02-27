@@ -10,7 +10,7 @@ import org.junit.Test;
 import bpogoda.learning.testanalyzer.api.model.answered.AnsweredTest;
 import bpogoda.learning.testanalyzer.api.model.template.TestTemplate;
 import bpogoda.learning.testanalyzer.api.model.template.TestTemplateItem;
-import bpogoda.learning.testanalyzer.api.stats.AnsweredTestScorer;
+import bpogoda.learning.testanalyzer.api.stats.util.AnsweredTestScorer;
 
 public class AnsweredTestScorerTest {
 

@@ -1,9 +1,10 @@
-package bpogoda.learning.testanalyzer.api.stats;
+package bpogoda.learning.testanalyzer.api.stats.histogram;
 
 import java.util.List;
 
 import bpogoda.learning.testanalyzer.api.model.answered.AnsweredTest;
 import bpogoda.learning.testanalyzer.api.model.template.TestTemplate;
+import bpogoda.learning.testanalyzer.api.stats.util.AnsweredTestScorer;
 
 /**
  * Class containing operations to generate data for results histogram.

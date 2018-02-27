@@ -11,7 +11,7 @@ import org.junit.Test;
 import bpogoda.learning.testanalyzer.api.model.answered.AnsweredTest;
 import bpogoda.learning.testanalyzer.api.model.template.TestTemplate;
 import bpogoda.learning.testanalyzer.api.model.template.TestTemplateItem;
-import bpogoda.learning.testanalyzer.api.stats.HistogramResultsAnalyzer;
+import bpogoda.learning.testanalyzer.api.stats.histogram.HistogramResultsAnalyzer;
 
 public class HistogramResultsAnalyzerTest {
 	private HistogramResultsAnalyzer histogramResultsAnalyzer;

@@ -1,0 +1,9 @@
+bpogoda.learning.testanalyzer.api.model.answered
+bpogoda.learning.testanalyzer.api.model.template
+bpogoda.learning.testanalyzer.api.model.template.builder
+bpogoda.learning.testanalyzer.api.stats.answers
+bpogoda.learning.testanalyzer.api.stats.general
+bpogoda.learning.testanalyzer.api.stats.grades
+bpogoda.learning.testanalyzer.api.stats.histogram
+bpogoda.learning.testanalyzer.api.stats.util
+bpogoda.learning.testanalyzer.api.test

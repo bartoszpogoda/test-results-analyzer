@@ -1,9 +1,15 @@
-package bpogoda.learning.testanalyzer.api.stats;
+package bpogoda.learning.testanalyzer.api.stats.grades;
 
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
+/**
+ * Contains information about possible grades and their lower point bounds. 
+ * 
+ * @author Student225988
+ *
+ */
 public class GradeRanges {
 	
 	private Map<Grade, Integer> gradeRanges;
@@ -20,6 +26,12 @@ public class GradeRanges {
 		return gradeRanges.get(grade);
 	}
 	
+	/**
+	 * Returns grade that applies to given score.
+	 * 
+	 * @param score
+	 * @return grade for given score
+	 */
 	public Grade getGradeForScore(int score) {
 		
 		Set<Grade> orderedGrades = gradeRanges.keySet();

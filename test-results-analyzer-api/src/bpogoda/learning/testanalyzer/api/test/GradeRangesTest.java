@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import bpogoda.learning.testanalyzer.api.stats.Grade;
-import bpogoda.learning.testanalyzer.api.stats.GradeRanges;
+import bpogoda.learning.testanalyzer.api.stats.grades.Grade;
+import bpogoda.learning.testanalyzer.api.stats.grades.GradeRanges;
 
 public class GradeRangesTest {
 

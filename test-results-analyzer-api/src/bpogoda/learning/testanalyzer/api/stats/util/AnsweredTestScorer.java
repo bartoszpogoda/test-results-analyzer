@@ -1,4 +1,4 @@
-package bpogoda.learning.testanalyzer.api.stats;
+package bpogoda.learning.testanalyzer.api.stats.util;
 
 import bpogoda.learning.testanalyzer.api.model.answered.AnsweredTest;
 import bpogoda.learning.testanalyzer.api.model.template.TestTemplate;
