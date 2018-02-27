@@ -80,7 +80,7 @@
                               <Font name="Lato Light" size="20.0" />
                            </font>
                         </Text>
-                        <ImageView fitHeight="259.0" fitWidth="229.0" layoutX="382.0" layoutY="319.0" opacity="0.28" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="-16.0">
+                        <ImageView fx:id="imageAccent" fitHeight="259.0" fitWidth="229.0" layoutX="382.0" layoutY="319.0" opacity="0.28" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="-16.0">
                            <image>
                               <Image url="@../icon.png" />
                            </image>

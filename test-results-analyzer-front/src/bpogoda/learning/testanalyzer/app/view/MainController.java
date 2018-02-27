@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import bpogoda.learning.testanalyzer.api.compability.TemplateAnswerCompabilityChecker;
 import bpogoda.learning.testanalyzer.api.model.answered.AnsweredTest;
 import bpogoda.learning.testanalyzer.api.model.template.TestTemplate;
 import bpogoda.learning.testanalyzer.app.MainApp;
@@ -18,6 +19,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -39,6 +42,9 @@ public class MainController {
 	@FXML
 	private Text templateFileTxt, answersFileTxt;
 
+	@FXML
+	private ImageView imageAccent;
+
 	private TestTemplate testTemplate;
 
 	private List<AnsweredTest> answeredTests;
@@ -50,19 +56,21 @@ public class MainController {
 	@FXML
 	public void initialize() throws IOException {
 		testDataHandlingControllers = new ArrayList<>();
-		
+
+		imageAccent.setImage(new Image(MainApp.class.getResourceAsStream("icon.png")));
+
 		initGeneralStatisticsPane();
 		initHistogramPane();
 		initGradeBalancePane();
 		initCorrectAnswerDistributionPane();
 		disableTabPanes();
 	}
-	
+
 	@FXML
 	private void quit() {
 		this.primaryStage.close();
 	}
-	
+
 	@FXML
 	private void showAbout() {
 		Alert alert = new Alert(AlertType.INFORMATION);
@@ -130,18 +138,35 @@ public class MainController {
 
 				answersFileTxt.setText(selectedFile.getName());
 
-				Alert alert = new Alert(AlertType.INFORMATION);
-				alert.setTitle("Information Dialog");
-				alert.setHeaderText("Answers loaded succesfully.");
+				if (validateInputFiles()) {
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Information Dialog");
+					alert.setHeaderText("Answers loaded succesfully.");
 
-				alert.show();
-				processTestResults();
-				enableTabPanes();
+					alert.show();
+					processTestResults();
+					enableTabPanes();
+				} else {
+					resetUponNewTemplateSelection();
+
+					Alert alert = new Alert(AlertType.ERROR);
+					alert.setTitle("Compability error");
+					alert.setHeaderText(
+							"List of loaded answered tests doesn't match with test template. Please provide proper input.");
+
+					alert.show();
+				}
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	private boolean validateInputFiles() {
+		TemplateAnswerCompabilityChecker compabilityChecker = new TemplateAnswerCompabilityChecker();
+
+		return compabilityChecker.check(testTemplate, answeredTests);
 	}
 
 	public void resetUponNewTemplateSelection() {
@@ -150,13 +175,14 @@ public class MainController {
 		loadAnswers.setDisable(true);
 
 		testDataHandlingControllers.forEach((controller) -> controller.clear());
-		
+
 		tabPane.getSelectionModel().select(0);
 		disableTabPanes();
 	}
 
 	private void processTestResults() {
 		testDataHandlingControllers.forEach((controller) -> controller.processTestData(testTemplate, answeredTests));
+
 	}
 
 	private void initGeneralStatisticsPane() throws IOException {
@@ -178,7 +204,7 @@ public class MainController {
 
 		addDynamicPane("Histogram", histogramPane);
 	}
-	
+
 	public void initGradeBalancePane() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 
@@ -188,7 +214,7 @@ public class MainController {
 
 		addDynamicPane("Grade balance", gradeBalancePane);
 	}
-	
+
 	public void initCorrectAnswerDistributionPane() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 
@@ -202,17 +228,17 @@ public class MainController {
 	public void addDynamicPane(String title, Pane pane) {
 		tabPane.getTabs().add(new Tab(title, pane));
 	}
-	
+
 	public void disableTabPanes() {
 		ObservableList<Tab> tabs = tabPane.getTabs();
-		for(int i = 1; i < tabs.size() ; i++) {
+		for (int i = 1; i < tabs.size(); i++) {
 			tabs.get(i).setDisable(true);
 		}
 	}
-	
+
 	public void enableTabPanes() {
 		ObservableList<Tab> tabs = tabPane.getTabs();
-		for(int i = 1; i < tabs.size() ; i++) {
+		for (int i = 1; i < tabs.size(); i++) {
 			tabs.get(i).setDisable(false);
 		}
 	}

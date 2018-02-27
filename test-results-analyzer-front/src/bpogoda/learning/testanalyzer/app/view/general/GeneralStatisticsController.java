@@ -23,7 +23,7 @@ public class GeneralStatisticsController implements TestDataHandlingController{
 	
 			numberOfQuestionsTxt.setText(Integer.toString(generalStatistics.getNumberOfQuestions()));
 			numberOfParticipantsTxt.setText(Integer.toString(generalStatistics.getNumberOfParticipants()));
-			averageScoreTxt.setText(Double.toString(generalStatistics.getAverageScore()));
+			averageScoreTxt.setText(String.format("%.1f", generalStatistics.getAverageScore()));
 	}
 
 	@Override
